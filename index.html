@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>World Job | World Job Listing Platform</title>
+  <meta name="description" content="Find your dream job with Worldjob. Filter by location, category, and experience level." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <header class="header">
+    <nav class="nav container">
+      <div class="logo">
+        <span class="logo-icon"><i data-lucide="briefcase-business"></i></span>
+        <span class="logo-text"><span>World</span>Job</span>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="#" class="active">Find Jobs</a></li>
+        <li><a href="#" id="companies-link">Companies</a></li>
+        <li><a href="#" id="salaries-link">Salaries</a></li>
+        <li class="mobile-only">
+          <button class="btn btn-outline" id="mobile-saved-btn"><i data-lucide="bookmark"></i><span>Saved</span></button>
+        </li>
+        <li class="mobile-only">
+          <button class="btn btn-primary" id="mobile-login-btn">Login</button>
+        </li>
+      </ul>
+
+      <div class="nav-search" id="nav-search">
+        <i data-lucide="search"></i>
+        <input type="text" id="nav-search-input" placeholder="Search jobs..." />
+      </div>
+
+      <div class="nav-actions desktop-only">
+        <button class="btn btn-outline" id="saved-jobs-btn"><i data-lucide="bookmark"></i><span>Saved</span></button>
+        <button class="btn btn-primary" id="login-btn">Login</button>
+      </div>
+
+      <button class="mobile-menu-btn" id="mobile-menu-btn"><i data-lucide="menu"></i></button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-section">
+      <div class="container hero-content">
+        <h1>Find Your  <span>Dream Job</span></h1>
+        <p>Discover premium roles from growth-stage startups to global enterprises.</p>
+        <div class="search-container">
+          <div class="search-wrapper">
+            <i data-lucide="search" class="search-icon"></i>
+            <input type="text" id="job-title-search" placeholder="Job title or company..." />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="listings-section container">
+      <aside class="filters-sidebar" id="filters-sidebar">
+        <div class="filter-group">
+          <div class="filter-header">
+            <h3>Filters</h3>
+            <div class="filter-actions">
+              <button id="clear-filters" class="text-btn">Clear All</button>
+              <button id="close-filters" class="mobile-only text-btn"><i data-lucide="x"></i></button>
+            </div>
+          </div>
+
+          <div class="filter-item">
+            <label for="location-filter"><i data-lucide="map-pin"></i> Location</label>
+            <select id="location-filter">
+              <option value="">All Locations</option>
+            </select>
+          </div>
+
+          <div class="filter-item">
+            <label for="category-filter"><i data-lucide="layers"></i> Category</label>
+            <select id="category-filter">
+              <option value="">All Categories</option>
+            </select>
+          </div>
+
+          <div class="filter-item">
+            <label for="experience-filter"><i data-lucide="bar-chart-2"></i> Experience</label>
+            <select id="experience-filter">
+              <option value="">All Levels</option>
+              <option value="Fresher">Fresher</option>
+              <option value="Mid-level">Mid-level</option>
+              <option value="Senior">Senior</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="promo-card">
+          <h4>Get Job Alerts</h4>
+          <p>Stay updated with premium openings in your role and location.</p>
+          <button class="btn btn-primary btn-sm" id="set-alert-btn">Set Alert</button>
+        </div>
+      </aside>
+
+      <div class="listings-container">
+        <div class="listings-header">
+          <div class="header-left">
+            <p class="results-count">Showing <span id="job-count">0</span> jobs</p>
+            <button id="show-filters" class="mobile-only btn btn-outline btn-sm"><i data-lucide="sliders-horizontal"></i> Filters</button>
+          </div>
+          <div class="sort-wrapper">
+            <span>Sort by:</span>
+            <select id="sort-order">
+              <option value="newest">Newest First</option>
+              <option value="salary-high">Salary: High to Low</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="job-grid" class="job-grid"></div>
+        <div class="pagination" id="pagination"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <div class="logo">
+          <span class="logo-icon"><i data-lucide="briefcase-business"></i></span>
+          <span class="logo-text"><span>World</span>Job</span>
+        </div>
+        <p>Smarter hiring and better careers, in one unified platform.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" title="Twitter"><i data-lucide="twitter"></i></a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i data-lucide="linkedin"></i></a>
+          <a href="https://instagram.com/YOUR_INSTAGRAM_USERNAME"
+   target="_blank"
+   rel="noopener noreferrer"
+   title="Instagram">
+   <i data-lucide="instagram"></i>
+</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 WorldJob. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div id="job-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <div id="login-modal" class="modal">
+    <div class="modal-content login-modal-content">
+      <span class="close-modal close-login">&times;</span>
+      <div class="login-wrapper">
+        <h2>Welcome Back</h2>
+        <p>Login to manage your saved jobs and applications.</p>
+        <form id="login-form">
+          <div class="form-group"><label for="email">Email Address</label><input type="email" id="email" required /></div>
+          <div class="form-group"><label for="password">Password</label><input type="password" id="password" required /></div>
+          <button type="submit" class="btn btn-primary btn-full">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div id="info-modal" class="modal">
+    <div class="modal-content info-modal-content">
+      <span class="close-modal close-info">&times;</span>
+      <div id="info-modal-body" class="info-content-wrapper"></div>
+    </div>
+  </div>
+
+  <div id="alert-modal" class="modal">
+    <div class="modal-content login-modal-content">
+      <span class="close-modal close-alert">&times;</span>
+      <div class="login-wrapper">
+        <h2>Set Job Alerts</h2>
+        <p>Get fresh openings directly in your inbox.</p>
+        <form id="alert-form">
+          <div class="form-group"><label for="alert-email">Email Address</label><input type="email" id="alert-email" required /></div>
+          <div class="form-group">
+            <label for="alert-category">Category</label>
+            <select id="alert-category"><option value="">Any Category</option></select>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Set Alert</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="jobs.js"></script>
+  <script src="scripts.js"></script>
+</body>
+</html>
